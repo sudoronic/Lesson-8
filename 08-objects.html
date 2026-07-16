@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      //object variable
+      const product = {
+        //properties
+        name: 'socks',
+        price: 1090
+      }; //object let us group multiple values
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      // "product.name" this syntax called dot notation
+      product.name = 'cotton socks';
+      //change the properties of object using assignment op
+      console.log(product.name);
+
+      //adding new property to object
+      product.newproperty = true ;
+      console.log(product);
+
+      //removing property from object
+      delete product.newproperty;
+      console.log(product);
+
+      //object is just a another type of value so 
+      console.log(typeof product);
+    </script>
+  </body>
+</html>
