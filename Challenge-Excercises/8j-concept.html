@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Coin Flip</title>
+
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 5px;
+      cursor: pointer;
+      color: white;
+      background-color: #4CAF50;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    p {
+      color: #080505;
+    }
+  </style>
+</head>
+<body>
+  <h2>Coin Flip</h2>
+  
+  <p>Click a button to guess the outcome:</p>
+
+  <button onclick="playGame('Heads');">Heads</button>
+
+  <button onclick="playGame('Tails');">Tails</button>
+
+  <button onclick="score.Win = 0;
+  score.Lose=0;">Reset Score</button>
+
+  <script>
+    let guess = '';
+    let result = '';
+    let randomNumber = 0;
+    let score = JSON.parse(localStorage.getItem('store')) || {
+      Win:0,
+      Lose:0,
+    };
+
+    function playGame(playerMove){
+      //player move = guess 
+      guess = playerMove;
+      //a random number for random guess
+      randomNumber = Math.random();
+      //check random number and set condititons
+      if(randomNumber > 0.5){
+        result = 'Heads';
+      }else if (randomNumber < 0.5){
+        result = 'Tails';
+      }
+      //comparing and display results
+      if(guess === result){
+        alert(`You Win - Score: Wins :${score.Win} , Loses : ${score.Lose}`);
+        score.Win += 1 ;
+      }else{
+        alert(`You Lose - Score: Wins :${score.Win} , Loses : ${score.Lose}`);
+        score.Lose += 1;
+      }
+      localStorage.setItem('store',JSON.stringify(score));
+    }
+  </script>
+</body>
+</html>
