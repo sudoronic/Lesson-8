@@ -5,31 +5,129 @@
   </head>
   <body>
     <script>
-      //object variable
-      const product = {
-        //properties
-        name: 'socks',
-        price: 1090
-      }; //object let us group multiple values
-      console.log(product);
-      console.log(product.name);
-      console.log(product.price);
+      /*
+            //object variable
+            const product = {
+              //properties
+              name: 'socks',
+              price: 1090
+            }; //object let us group multiple values
+            console.log(product);
+            console.log(product.name);
+            console.log(product.price);
 
-      // "product.name" this syntax called dot notation
-      product.name = 'cotton socks';
-      //change the properties of object using assignment op
-      console.log(product.name);
+            // "product.name" this syntax called dot notation
+            product.name = 'cotton socks';
+            //change the properties of object using assignment op
+            console.log(product.name);
 
-      //adding new property to object
-      product.newproperty = true ;
-      console.log(product);
+            //adding new property to object
+            product.newproperty = true ;
+            console.log(product);
 
-      //removing property from object
-      delete product.newproperty;
-      console.log(product);
+            //removing property from object
+            delete product.newproperty;
+            console.log(product);
 
-      //object is just a another type of value so 
-      console.log(typeof product);
+            //object is just a another type of value so 
+            console.log(typeof product);
+     */
+  /* const product2 = {
+      name: 'shirt',
+      ['delivery-time']: '1 day',
+      rating: {
+        stars: 4.5,
+        count: 87,
+      },
+      fun: function function1 (){
+        console.log('function inside object');
+      }
+     };
+     console.log(product2);
+     console.log(product2.name);
+     //this notation is called bracket notation
+     console.log(product2['name']);
+
+     /*console.log(product2.delivery-time); this occur error because js try to do math with this so we use bracket notation instead of dot notation*/
+    /* console.log(product2['delivery-time']);
+     //function inside an object is called Method
+     product2.fun();
+
+     /*For example , console.log and math.round both are method because function inside object
+
+     which is gave example of are built-in objects....
+     so "object + fucntion = method"*/
+     //we usually use dot notation but if dot doesnt work try using the bracket
+    /* console.log(product2.rating.count);
+
+
+     //built-in objects like console,math,json,localstorage... lets see
+
+     //js object ====> json object
+     const jsonstring = JSON.stringify(product2)
+     console.log(JSON.stringify(product2));
+     console.log(typeof JSON.stringify(product2));
+
+     //json object ====> js object
+     const jsobject = JSON.parse(jsonstring);
+     console.log(jsobject);
+
+     //Next built-in object localstorage
+      localStorage.setItem('message','hello-String');
+        //get string out of local storage
+        localStorage.getItem('message');
+
+    console.log( localStorage.getItem);
+    
+    //auto-boxing in javascript
+    //works on string , numbers , booleans but not on null and undefined
+    console.log('hello'.length);
+    console.log('ronic'.toUpperCase());
+    console.log(3.0.toString());
+
+   */
+
+   const object1 = {
+    message: 'good job'
+   };
+   const object2 = object1;
+
+   console.log(object1 === object2);
+
+   const object3 = {
+    message: 'good job'
+   };
+
+   //objects are refferences
+   
+   console.log(object3 === object1 );
+
+   const object4 = {
+    message: 'good job',
+    price: 799,
+   };
+
+   //const message = object4.message;
+   const { message , price } = object4;
+   console.log(message);
+   console.log(price);
+
+
+   //shortHand property
+   const object5 = {
+    //message: message,
+    message,
+    /*method: function function1() {
+      console.log('method');
+      }*/
+     method(){
+      console.log('method 2');
+     }
+   };
+   console.log(object5);
+
+   //shortHand Method
+   object5.method();
     </script>
   </body>
 </html>

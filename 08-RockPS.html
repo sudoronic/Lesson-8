@@ -15,15 +15,28 @@
 
     <button onclick="score.Wins = 0;
     score.Ties = 0;
-    score.Loses = 0;">Reset Score</button>
+    score.Loses = 0;
+    localStorage.removeItem('score');">Reset Score</button>
 
     <script> 
+
+
     //made the object 'score'
-    let score = {
-      Wins:0,
-      Loses:0,
-      Ties:0
-    }  
+    let score = JSON.parse(localStorage.getItem('score')) || {
+        Wins: 0,
+        Loses:0,
+        Ties:0,
+      }; // <=== default op for shortcut
+
+    //when localstorage.removeitem so value becomes null thats why if value null then re assigning the value to score
+    /*if (score === null or !score) {
+      score = {
+        Wins: 0,
+        Loses:0,
+        Ties:0,
+      };
+    } */
+
       function playGame(playerMove) {
         const compMove = pickCompMove();
 
@@ -65,6 +78,8 @@
       }else if (result === 'Tie'){
         score.Ties += 1;
       }
+      localStorage.setItem('score',JSON.stringify(score));
+
         alert(`You picked ${playerMove}. Computer picked ${compMove}. So ${result} 
         Scores :[ wins : ${score.Wins} , Loses : ${score.Loses} , Ties : ${score.Ties} ]`);
 
