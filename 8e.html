@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Functipn and Objects</title>
+</head>
+<body>
+  <script>
+    const P1 = {
+      name: 'basketball',
+      price: 2095,
+    };
+    const P2 = {
+      name: 'shirt',
+      price: 799,
+    };
+    const P3 = {
+      name: 'basketball',
+      price: 2095,
+    };
+    const P4 = {
+      name: 'shirt',
+      price: 799,
+    };
+    function isSameProduct(a,b) 
+    {
+      if (a.price === b.price && a.name === b.name)
+      {
+        console.log('True');
+        
+      }else
+      {
+        console.log('False');
+        
+      }
+    }
+    
+    isSameProduct(P1,P2);
+    isSameProduct(P1,P3);
+    isSameProduct(P1,P4);
+  </script>
+</body>
+</html>
