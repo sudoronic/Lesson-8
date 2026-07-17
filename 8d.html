@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Functipn and Objects</title>
+</head>
+<body>
+  <script>
+    const P1 = {
+      name: 'basketball',
+      price: 2095,
+    };
+    const P2 = {
+      name: 'shirt',
+      price: 799,
+    };
+    function comparePrice(product1,product2) {
+      if (product1.price > product2.price){
+        console.log('product 2 price is lower');
+        return product2.price;
+      }else{
+        console.log('product 1 price is lower');
+        return product1.price;
+      }
+    }
+    
+    comparePrice(P1,P2);
+  </script>
+</body>
+</html>
