@@ -45,7 +45,7 @@
     let randomNumber = 0;
     let score = JSON.parse(localStorage.getItem('store')) || {
       Win:0,
-      Lose:0,
+      Lose:0
     };
 
     function playGame(playerMove){
@@ -61,11 +61,13 @@
       }
       //comparing and display results
       if(guess === result){
-        alert(`You Win - Score: Wins :${score.Win} , Loses : ${score.Lose}`);
         score.Win += 1 ;
+        alert(`You Win - Score: Wins :${score.Win} , Loses : ${score.Lose}`);
+        
       }else{
-        alert(`You Lose - Score: Wins :${score.Win} , Loses : ${score.Lose}`);
         score.Lose += 1;
+        alert(`You Lose - Score: Wins :${score.Win} , Loses : ${score.Lose}`);
+        
       }
       localStorage.setItem('store',JSON.stringify(score));
     }
